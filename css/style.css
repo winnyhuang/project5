@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+.flip-container {
+  position: relative;
+  height: 400px;
+  perspective: 1000px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: 1px solid #808080;
+  z-index: 1;
+}
+.flip-container .flip-card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+}
+.flip-container .flip-card .front {
+  background-color: #0099ff;
+}
+.flip-container .flip-card .back {
+  background-color: black;
+  z-index: -10;
+}
+.flip-container .flip-card.linear {
+  -webkit-transition: -webkit-transform 1s linear;
+}
+.flip-container .flip-card.ease {
+  -webkit-transition: -webkit-transform 1s ease;
+}
+.flip-container .flip-card.ease-in {
+  -webkit-transition: -webkit-transform 1s ease-in;
+}
+.flip-container .flip-card.ease-out {
+  -webkit-transition: -webkit-transform 1s ease-out;
+}
+.flip-container .flip-card.ease-in-out {
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+}
+.flip-container .flip-card.cubic-bezier {
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.43, 1, 0.77, 1);
+}
+.flip-container:hover .flip-card {
+  -webkit-transform: rotateY(180deg);
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+}
+.face.back {
+  -webkit-transform: rotateY(180deg);
+}
